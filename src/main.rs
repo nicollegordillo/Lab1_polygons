@@ -38,17 +38,26 @@ fn main() {
         Vec3::new(374.0, 302.0, 0.0),
     ];
 
+    let polygon3_vertices = vec![
+        Vec3::new(377.0, 249.0, 0.0),
+        Vec3::new(411.0, 197.0, 0.0),
+        Vec3::new(436.0, 249.0, 0.0),
+    ];
+
     framebuffer.set_current_color(0xFFC857);
     framebuffer.fill_polygon(&polygon1_vertices, 0xFFC857);
 
     framebuffer.set_current_color(0x00A5CF);
     framebuffer.fill_polygon(&polygon2_vertices, 0x00A5CF);
+
+    framebuffer.set_current_color(0xD62246);
+    framebuffer.fill_polygon(&polygon3_vertices, 0xD62246);
     
     // Draw each polygon with its respective colors
     framebuffer.set_current_color(0xffffff);
     draw_polygon(&mut framebuffer, &polygon1_vertices); 
     draw_polygon(&mut framebuffer, &polygon2_vertices);
-    
+    draw_polygon(&mut framebuffer, &polygon3_vertices);
     
 
     // Flip the image vertically (BMP format requirement)
